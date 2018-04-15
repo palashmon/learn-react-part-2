@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Learn React v16</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+    <script type="text/babel">
+        function Message({message}) {
+            return message ? <div>{message}</div> : <div>No message found</div>;
+        }
+
+        const rootElement = document.getElementById('root');
+        const element = <Message message={null}/>
+        ReactDOM.render(element, rootElement)
+
+    </script>
+</body>
