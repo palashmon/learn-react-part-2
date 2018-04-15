@@ -8,7 +8,8 @@ Learning more about ReactJS basics from a different course from [Egghead.io][egg
 *   [x] Replace React createElement Function Call with JSX
 *   [x] Create a Simple Reusable Component
 *   [x] Validate Custom React Component Props with PropTypes
-*   [ ] Conditionally Render A React Component
+*   [x] Conditionally Render A React Component
+*   [ ] Rerender a React Application
 *   [ ] TODO
 
 <!-- All the links here -->
