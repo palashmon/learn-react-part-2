@@ -9,7 +9,7 @@ Learning more about ReactJS basics from a different course from [Egghead.io][egg
 *   [x] Create a Simple Reusable Component
 *   [x] Validate Custom React Component Props with PropTypes
 *   [x] Conditionally Render A React Component
-*   [ ] Rerender a React Application
+*   [x] Rerender a React Application
 *   [ ] TODO
 
 <!-- All the links here -->
