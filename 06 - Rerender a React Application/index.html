@@ -7,20 +7,37 @@
 
 <body>
     <div id="root"></div>
+    <hr/>
+    <div id="root2"></div>
     <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
     <script crossorigin src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        crossorigin="anonymous">
     <script type="text/babel">
         function tick() {
             const rootElement = document.getElementById('root');
+            const rootElement2 = document.getElementById('root2');
             const time = new Date().toLocaleTimeString()
             const element = (
-                <div>
-                    <h1>Hello, world!</h1>
-                    <h2>It is {time}.</h2>
+                <div className="container">
+                    <div class="page-header">
+                        <h2>Using React<br/><small>ReactDOM.render(element, rootElement)</small></h2>
+                    </div>
+                    <h4>It is {time}.</h4>
                 </div>
             )
             ReactDOM.render(element, rootElement)
+
+            const element2 = `
+                <div class="container">
+                    <div class="page-header">
+                        <h2>Using Javascript<br/><small>rootElement.innerHTML</small></h2>
+                    </div>
+                    <h4>It is ${time}.</h4>
+                </div>
+            `
+            rootElement2.innerHTML = element2;
         }
         tick()
         setInterval(tick, 1000)
