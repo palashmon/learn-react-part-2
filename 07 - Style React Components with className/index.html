@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Learn React v16</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script src="../assets/react.development.js"></script>
+    <script src="../assets/react-dom.development.js"></script>
+    <script src="../assets/babel.js"></script>
+    <link rel="stylesheet" href="../assets/bootstrap.min.css">
+    <style>
+        .box {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            text-align: center;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            font-size: 40px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+
+        .box--small {
+            width: 250px;
+        }
+
+        .box--medium {
+            width: 500px;
+        }
+    </style>
+    <script type="text/babel">
+
+        function Box({style, size, className = '', ...rest}) {
+            console.log({style, size, className, rest})
+            const sizeclassName = size ? `box--${size}` : ''
+            return (
+                <div
+                    className={`box ${className} ${sizeclassName}`}
+                    style={{paddingLeft: 20, ...style}}
+                    {...rest}
+                />
+            )
+
+        }
+
+        const rootElement = document.getElementById('root');
+        const element = (
+            <div className="container">
+                <div className="row" style={{marginTop: 50}}>
+                    <div className="col-md-12">
+                        <Box size="small" style={{backgroundColor: '#DAA520'}}>Small Box</Box>
+                    </div>
+                    <div className="col-md-12">
+                        <Box size="medium">Medium Box</Box>
+                    </div>
+                    <div className="col-md-12">
+                        <Box style={{backgroundColor: '#008080'}}>Large Box</Box>
+                    </div>
+                </div>
+            </div>
+        )
+        ReactDOM.render(element, rootElement)
+    </script>
+</body>
