@@ -10,6 +10,8 @@ Learning more about ReactJS basics from a different course from [Egghead.io][egg
 *   [x] Validate Custom React Component Props with PropTypes
 *   [x] Conditionally Render A React Component
 *   [x] Rerender a React Application
+*   [x] Style React Components with className and In Line Styles
+*   [ ] Use Event Handlers
 *   [ ] TODO
 
 <!-- All the links here -->
