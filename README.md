@@ -12,10 +12,10 @@ Learning more about ReactJS basics from a different course from [Egghead.io][egg
 *   [x] Rerender a React Application
 *   [x] Style React Components with className and In Line Styles
 *   [x] Use Event Handlers
-*   [ ] Use Component State
-*   [ ] Stop Memory Leaks with componentWillUnmount Lifecycle Method
-*   [ ] Use Class Component
-*   [ ] Manipulate the DOM with React refs
+*   [x] Use Component State
+*   [x] Stop Memory Leaks with componentWillUnmount Lifecycle Method
+*   [x] Use Class Component
+*   [x] Manipulate the DOM with React refs
 *   [ ] Make Basic Forms with React
 *   [ ] Make Dynamic Forms with React
 *   [ ] Controlling Form Values
