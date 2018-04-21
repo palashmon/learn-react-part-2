@@ -1,0 +1,28 @@
+<body>
+    <div id="root"></div>
+    <script src="../assets/react.development.js"></script>
+    <script src="../assets/react-dom.development.js"></script>
+    <script src="../assets/babel.js"></script>
+    <script type="text/babel">
+    class Counter extends React.Component {
+        state = {count: 0}
+        handleClick = () => {
+            this.setState(({count}) => ({
+                count: count + 1,
+            }))
+        }
+        render() {
+            return (
+                <button onClick={this.handleClick}>
+                    {this.state.count}
+                </button>
+            )
+        }
+    }
+
+    ReactDOM.render(
+        <Counter />,
+        document.getElementById('root'),
+    )
+    </script>
+</body>
