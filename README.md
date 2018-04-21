@@ -11,8 +11,17 @@ Learning more about ReactJS basics from a different course from [Egghead.io][egg
 *   [x] Conditionally Render A React Component
 *   [x] Rerender a React Application
 *   [x] Style React Components with className and In Line Styles
-*   [ ] Use Event Handlers
-*   [ ] TODO
+*   [x] Use Event Handlers
+*   [ ] Use Component State
+*   [ ] Stop Memory Leaks with componentWillUnmount Lifecycle Method
+*   [ ] Use Class Component
+*   [ ] Manipulate the DOM with React refs
+*   [ ] Make Basic Forms with React
+*   [ ] Make Dynamic Forms with React
+*   [ ] Controlling Form Values
+*   [ ] Use the key prop when Rendering a List
+*   [ ] Make HTTP Requests
+*   [ ] Build and deploy a React Application
 
 <!-- All the links here -->
 
