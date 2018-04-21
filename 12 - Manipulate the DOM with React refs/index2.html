@@ -1,0 +1,45 @@
+<body>
+    <script src="../assets/react.development.js"></script>
+    <script src="../assets/react-dom.development.js"></script>
+    <script src="../assets/babel.js"></script>
+    <link rel="stylesheet" href="../assets/bootstrap.min.css">
+    <div id="root"></div>
+
+    <script type="text/babel">
+
+    class App extends React.Component {
+        constructor(props) {
+            super(props);
+        }
+
+        submit = () => {
+            // get ref value
+            const surname = this.surname.value;
+            if(!surname) return;
+            console.log('Surname: ', surname)
+        }
+
+        render() {
+            return (
+            <div style={{margin: 50}}>
+                {/* surname field */}
+                <input
+                    type='text'
+                    ref={node => (this.surname = node)}
+                    placeholder='Enter your surname'
+                    className="form-control input-sm"
+                    required />
+                {/* submit button */}
+                <input type="submit" value="Submit" onClick={this.submit}
+                    className="btn btn-info"  style={{marginTop: 10}}/>
+            </div>
+            )
+        }
+    }
+
+    ReactDOM.render(
+        <App/>,
+        document.getElementById('root'),
+    )
+    </script>
+</body>
