@@ -1,0 +1,72 @@
+<body>
+    <div id="root"></div>
+    <script src="../assets/react.development.js"></script>
+    <script src="../assets/react-dom.development.js"></script>
+    <script src="../assets/babel.js"></script>
+    <script type="text/babel">
+    class NameForm extends React.Component {
+        state = {error: this.props.getErrorMessage('')}
+        handleSubmit = event => {
+            event.preventDefault()
+            const value =
+            event.target.elements.username.value
+            const error = this.props.getErrorMessage(
+            value,
+            )
+            if (error) {
+            alert(`error: ${error}`)
+            } else {
+            alert(`success: ${value}`)
+            }
+        }
+        handleChange = event => {
+            const {value} = event.target
+            this.setState({
+            error: this.props.getErrorMessage(value),
+            })
+        }
+        render() {
+            const {error} = this.state
+            return (
+                <div style={{margin: 50}}>
+                    <form onSubmit={this.handleSubmit}>
+                        <label>
+                        Name:
+                        <input
+                            type="text"
+                            onChange={this.handleChange}
+                            name="username"
+                        />
+                        </label>
+                        {error ? (
+                        <div style={{color: 'red'}}>
+                            {error}
+                        </div>
+                        ) : null}
+                        <button
+                        disabled={Boolean(error)}
+                        type="submit"
+                        >
+                        Submit
+                        </button>
+                    </form>
+                </div>
+            )
+        }
+    }
+    ReactDOM.render(
+        <NameForm
+            getErrorMessage={value => {
+            if (value.length < 3) {
+                return `Value must be at least 3 characters, but is only ${value.length}`
+            }
+            if (!value.includes('s')) {
+                return `Value does not include "s" but it should!`
+            }
+            return null
+            }}
+        />,
+        document.getElementById('root'),
+    )
+    </script>
+</body>
