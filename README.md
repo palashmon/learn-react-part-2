@@ -16,8 +16,8 @@ Learning more about ReactJS basics from a different course from [Egghead.io][egg
 *   [x] Stop Memory Leaks with componentWillUnmount Lifecycle Method
 *   [x] Use Class Component
 *   [x] Manipulate the DOM with React refs
-*   [ ] Make Basic Forms with React
-*   [ ] Make Dynamic Forms with React
+*   [x] Make Basic Forms with React
+*   [x] Make Dynamic Forms with React
 *   [ ] Controlling Form Values
 *   [ ] Use the key prop when Rendering a List
 *   [ ] Make HTTP Requests
