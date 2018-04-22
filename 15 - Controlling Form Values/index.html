@@ -1,0 +1,138 @@
+<body>
+    <div id="root"></div>
+    <script src="../assets/react.development.js"></script>
+    <script src="../assets/react-dom.development.js"></script>
+    <script src="../assets/babel.js"></script>
+    <link rel="stylesheet" href="../assets/bootstrap.min.css">
+    <script type="text/babel">
+    class MyFancyForm extends React.Component {
+        static availableOptions = [
+            'apple',
+            'grape',
+            'cherry',
+            'orange',
+            'pear',
+            'peach',
+        ]
+
+        state = {
+            multiline: '',
+            commaSeparated: '',
+            multiSelect: [],
+        }
+
+        handleCommaSeparatedChange = event => {
+            const {value} = event.target
+            const allVals = value
+                .split(',')
+                .map(v => v.trim())
+                .filter(Boolean)
+            this.setState({
+                commaSeparated: value,
+                multiline: allVals.join('\n'),
+                multiSelect: allVals.filter(v =>
+                    MyFancyForm.availableOptions.includes(v),
+                ),
+            })
+        }
+        handleMultilineChange = event => {
+            const {value} = event.target
+            const allVals = value
+                .split('\n')
+                .map(v => v.trim())
+                .filter(Boolean)
+            this.setState({
+                multiline: value,
+                commaSeparated: allVals.join(','),
+                multiSelect: allVals.filter(v =>
+                    MyFancyForm.availableOptions.includes(v),
+                ),
+            })
+        }
+        handleMultiSelectChange = event => {
+            const allVals = Array.from(
+                event.target.selectedOptions,
+                ).map(o => o.value)
+            this.setState({
+                multiSelect: allVals,
+                multiline: allVals.join('\n'),
+                commaSeparated: allVals.join(','),
+            })
+        }
+        render() {
+            const {
+                commaSeparated,
+                multiline,
+                multiSelect,
+            } = this.state
+
+            return (
+            <form className="m-5">
+                <div>
+                <label>
+                    Comma separated values:
+                    <br />
+                    <input
+                    type="text" className="form-control mt-1"
+                    value={commaSeparated}
+                    onChange={
+                        this.handleCommaSeparatedChange
+                    }
+                    />
+                </label>
+                </div>
+                <div className="mt-4">
+                <label>
+                    Multiline values:
+                    <br />
+                    <textarea
+                    value={multiline} className="form-control mt-1"
+                    rows={
+                        MyFancyForm.availableOptions
+                        .length
+                    }
+                    onChange={
+                        this.handleMultilineChange
+                    }
+                    />
+                </label>
+                </div>
+                <div className="mt-4">
+                <label>
+                    MultiSelect values:
+                    <br />
+                    <select
+                    multiple className="form-control mt-1"
+                    value={multiSelect}
+                    size={
+                        MyFancyForm.availableOptions
+                        .length
+                    }
+                    onChange={
+                        this.handleMultiSelectChange
+                    }
+                    >
+                    {MyFancyForm.availableOptions.map(
+                        optionValue => (
+                        <option
+                            key={optionValue}
+                            value={optionValue}
+                        >
+                            {optionValue}
+                        </option>
+                        ),
+                    )}
+                    </select>
+                </label>
+                </div>
+            </form>
+            )
+        }
+    }
+
+    ReactDOM.render(
+        <MyFancyForm />,
+        document.getElementById('root'),
+    )
+    </script>
+</body>
