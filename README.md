@@ -18,8 +18,8 @@ Learning more about ReactJS basics from a different course from [Egghead.io][egg
 *   [x] Manipulate the DOM with React refs
 *   [x] Make Basic Forms with React
 *   [x] Make Dynamic Forms with React
-*   [ ] Controlling Form Values
-*   [ ] Use the key prop when Rendering a List
+*   [x] Controlling Form Values
+*   [x] Use the key prop when Rendering a List
 *   [ ] Make HTTP Requests
 *   [ ] Build and deploy a React Application
 
