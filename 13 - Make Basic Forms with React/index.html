@@ -1,0 +1,40 @@
+<body>
+    <div id="root"></div>
+    <script src="../assets/react.development.js"></script>
+    <script src="../assets/react-dom.development.js"></script>
+    <script src="../assets/babel.js"></script>
+    <script type="text/babel">
+    class NameForm extends React.Component {
+        handleSubmit = event => {
+            event.preventDefault()
+            console.log({target: event.target})
+            console.log(event.target[0].value)
+            console.log(event.target.elements.username.value)
+            console.log(this.inputNode.value)
+        }
+
+        render() {
+            return (
+                <div style={{margin: 50}}>
+                    <form onSubmit={this.handleSubmit}>
+                        <label>
+                        Name:
+                        <input
+                            type="text"
+                            name="username"
+                            ref={node => (this.inputNode = node)}
+                        />
+                        </label>
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            )
+        }
+    }
+
+    ReactDOM.render(
+        <NameForm />,
+        document.getElementById('root'),
+    )
+    </script>
+</body>
